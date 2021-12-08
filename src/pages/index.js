@@ -3,11 +3,24 @@ import gql from "graphql-tag"
 import { useQuery } from "@apollo/client"
 
 import Layout from "../components/layout"
+import Section from "../utils/Section/Section"
 
 const APOLLO_QUERY = gql`
   {
     pageBy(uri: "home") {
       id
+      homePage {
+        fieldGroupName
+        hero {
+          fieldGroupName
+          title
+          backgroundImage {
+            id
+            altText
+            sourceUrl(size: LARGE)
+          }
+        }
+      }
       slug
     }
   }
@@ -24,9 +37,16 @@ const IndexPage = () => {
   }
   if (error) return `${error}`
 
+  const { backgroundImage, title } = data.pageBy.homePage.hero
+
   return (
-    <Layout>
-      <div className="relative w-full">Hello World!</div>
+    <Layout isHomePage>
+      <Section flexDirection="row" />
+      <Section flexDirection="row-reverse" />
+      <Section flexDirection="row" />
+      <Section flexDirection="row-reverse" />
+      <Section flexDirection="row" />
+      <Section flexDirection="row-reverse" />
     </Layout>
   )
 }
