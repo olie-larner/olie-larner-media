@@ -10,6 +10,7 @@ module.exports = {
         arastin_script: ["arastin_script_free_demoRg", "sans-serif"],
         arastin_std: ["arastin_std_free_demoregular", "sans-serif"],
         star_avenue: ["star_avenueregular", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
       },
     },
   },

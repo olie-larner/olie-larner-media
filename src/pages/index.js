@@ -3,7 +3,7 @@ import gql from "graphql-tag"
 import { useQuery } from "@apollo/client"
 
 import Layout from "../components/layout"
-import Section from "../utils/Section/Section"
+import Section from "../components/Section/Section"
 
 const APOLLO_QUERY = gql`
   {
