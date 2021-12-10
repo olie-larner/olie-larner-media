@@ -42,11 +42,6 @@ const IndexPage = () => {
   return (
     <Layout isHomePage>
       <Section flexDirection="row" />
-      <Section flexDirection="row-reverse" />
-      <Section flexDirection="row" />
-      <Section flexDirection="row-reverse" />
-      <Section flexDirection="row" />
-      <Section flexDirection="row-reverse" />
     </Layout>
   )
 }
