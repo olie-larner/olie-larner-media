@@ -26,7 +26,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || `http://18.132.199.24/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://olielarnercms.link/graphql`,
       },
     },
 
@@ -68,7 +68,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-apollo",
       options: {
-        uri: "http://18.132.199.24/graphql",
+        uri: "https://olielarnercms.link/graphql",
       },
     },
     `gatsby-plugin-postcss`,
