@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client"
 
 import Layout from "../components/layout"
 import Section from "../components/Section/Section"
+import IntroSection from "../components/homepage/intro-section"
 
 const APOLLO_QUERY = gql`
   {
@@ -41,7 +42,7 @@ const IndexPage = () => {
 
   return (
     <Layout isHomePage>
-      <Section flexDirection="row" />
+      <IntroSection />
       <Section flexDirection="row-reverse" />
       <Section flexDirection="row" />
       <Section flexDirection="row-reverse" />
