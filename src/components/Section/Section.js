@@ -11,7 +11,7 @@ const section = ({ flexDirection }) => {
 
       <div className="right-container">
         <div className="font-playfair container">
-          <p>
+          <p className="text-gray-800">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In
             laudantium esse fugiat illum tempore sapiente soluta labore voluptas
             iusto deleniti ab suscipit dolores quisquam corrupti facilis, id

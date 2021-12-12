@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.17",
+    "classnames": "^2.3.1",
     "gatsby": "^4.0.0",
     "gatsby-plugin-apollo": "^3.0.2",
     "gatsby-plugin-image": "^2.0.0",
