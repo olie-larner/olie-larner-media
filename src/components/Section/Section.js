@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import "./Section.css";
+import "./Section.css"
 
 const section = ({ flexDirection }) => {
   return (
@@ -10,7 +10,7 @@ const section = ({ flexDirection }) => {
       </div>
 
       <div className="right-container">
-        <div className="container">
+        <div className="font-playfair container">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In
             laudantium esse fugiat illum tempore sapiente soluta labore voluptas
@@ -23,7 +23,7 @@ const section = ({ flexDirection }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default section;
+export default section
