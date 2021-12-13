@@ -17,7 +17,7 @@ const Header = title => {
 
   return (
     <div className="h-20 flex items-center absolute w-full">
-      <h1 className="font-arastin_pro w-11/12 text-2xl mx-auto text-gray-800">
+      <h1 className=" font-arastin_std w-11/12 text-2xl mx-auto text-gray-800">
         {title.title}
       </h1>
       <div className="ml-auto mr-5 z-50">

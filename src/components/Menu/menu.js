@@ -6,13 +6,12 @@ const Menu = menuOpen => {
 
   useEffect(() => {
     setIsOpen(menuOpen)
-    console.log(isOpen)
   }, [menuOpen])
 
   return (
     <div
       className={classnames(
-        "overflow-hidden bg-gray-800 font-white fixed text-white flex items-center justify-center transition-all duration-700",
+        "overflow-hidden bg-gray-800 font-white fixed text-white z-40 flex items-center justify-center transition-all duration-700",
         {
           "w-full h-screen rounded-none top-0 right-0": isOpen.isOpen,
           "w-0 h-0 rounded-full top-5 right-5": !isOpen.isOpen,

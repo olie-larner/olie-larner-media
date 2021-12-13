@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import gql from "graphql-tag"
 import { useQuery } from "@apollo/client"
 
 import Layout from "../components/layout"
 import Section from "../components/Section/Section"
 import IntroSection from "../components/homepage/intro-section"
+import SkillsSection from "../components/homepage/skills-section"
 
 const APOLLO_QUERY = gql`
   {
@@ -29,6 +30,7 @@ const APOLLO_QUERY = gql`
 
 const IndexPage = () => {
   const { loading, error, data } = useQuery(APOLLO_QUERY)
+
   if (loading) {
     return (
       <div className="fixed top-0 z-10 flex items-center justify-center w-screen h-screen bg-white">
@@ -38,12 +40,10 @@ const IndexPage = () => {
   }
   if (error) return `${error}`
 
-  const { backgroundImage, title } = data.pageBy.homePage.hero
-
   return (
     <Layout isHomePage>
-      <IntroSection />
-      <Section flexDirection="row-reverse" />
+      <IntroSection loading={loading} />
+      <SkillsSection />
       <Section flexDirection="row" />
       <Section flexDirection="row-reverse" />
       <Section flexDirection="row" />
