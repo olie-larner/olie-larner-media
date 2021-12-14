@@ -6,6 +6,10 @@ import Layout from "../components/layout"
 import Section from "../components/Section/Section"
 import IntroSection from "../components/homepage/intro-section"
 import SkillsSection from "../components/homepage/skills-section"
+import BigImage from "../components/homepage/big-image"
+
+import Image1 from "../media/images/road_to_mist.jpg"
+import Image2 from "../media/images/faith.jpg"
 
 const APOLLO_QUERY = gql`
   {
@@ -43,9 +47,8 @@ const IndexPage = () => {
   return (
     <Layout isHomePage>
       <IntroSection loading={loading} />
+      <BigImage image="bg-road" />
       <SkillsSection />
-      <Section flexDirection="row" />
-      <Section flexDirection="row-reverse" />
       <Section flexDirection="row" />
       <Section flexDirection="row-reverse" />
     </Layout>
