@@ -1,81 +1,47 @@
-import React, { useRef } from "react"
-import { useInViewport } from "ahooks"
+import React, { useState } from "react"
 import classNames from "classnames"
-import { Controller, Scene } from "react-scrollmagic"
-import { Tween, Timeline } from "react-gsap"
-import styled, { css } from "styled-components"
+import Fade from "react-reveal/Fade"
 
-const TweenStyled = styled.div`
-  .tween {
-    background-color: rgba(31, 41, 55, 1);
-  }
-`
-
-const SkillsSection = () => {
-  const myRef = useRef()
-  const [inViewport] = useInViewport(myRef)
-
+const SkillsSection = data => {
   return (
-    <TweenStyled>
-      <Controller>
-        <Scene triggerElement="#trigger" duration={1000} offset={1500}>
-          {progress => (
-            <Tween
-              to={{
-                backgroundColor: "#FFFFFF",
-              }}
-              ease="Strong.easeOut"
-              totalProgress={progress}
-              paused
-            >
-              <div id="skills-section" className="w-full tween h-[3000px]">
-                <div className="w-11/12 h-full mx-auto">
-                  <div id="trigger" />
-                  <div className="sticky w-4/12 h-40 top-5">
-                    <p
-                      className={classNames(
-                        "text-7xl  2xl:text-9xl cursor-pointer text-white font-playfair font-bold transition-transform duration-700 delay-200 hover:text-yellow-600 hover:delay-0 hover:duration-0",
-                        {
-                          "scale-y-100": inViewport,
-                          "scale-y-0": !inViewport,
-                        }
-                      )}
-                      ref={myRef}
-                    >
-                      Web
-                    </p>
-                    <p
-                      className={classNames(
-                        "text-7xl  2xl:text-9xl cursor-pointer text-white font-playfair font-bold transition-transform duration-700 delay-300 hover:text-yellow-600 hover:delay-0 hover:duration-0",
-                        {
-                          "scale-y-100": inViewport,
-                          "scale-y-0": !inViewport,
-                        }
-                      )}
-                      ref={myRef}
-                    >
-                      Music
-                    </p>
-                    <p
-                      className={classNames(
-                        "text-7xl  2xl:text-9xl cursor-pointer text-white font-playfair font-bold transition-transform duration-700 delay-500 hover:text-yellow-600 hover:delay-0 hover:duration-0",
-                        {
-                          "scale-y-100": inViewport,
-                          "scale-y-0": !inViewport,
-                        }
-                      )}
-                      ref={myRef}
-                    >
-                      Visual
-                    </p>
+    <>
+      {data.skillSet.map((skill, key) => {
+        return (
+          <div id="skills-section" className="w-full py-32 bg-white" key={key}>
+            <div className="w-11/12 mx-auto">
+              <div id="trigger" />
+
+              <div className="w-full">
+                <h3
+                  className={classNames(
+                    "text-7xl 2xl:text-9xl pb-10 cursor-pointer text-gray-800 font-playfair font-bold transition-transform duration-700 delay-200"
+                  )}
+                >
+                  {skill.skillSetTitle}
+                </h3>
+                <Fade bottom cascade>
+                  <div className="flex flex-row flex-wrap w-full">
+                    {skill.skillSetLogos &&
+                      skill.skillSetLogos.map((icon, key) => {
+                        return (
+                          <div className="flex justify-center w-1/4 my-7">
+                            <img
+                              src={icon.skillLogo.sourceUrl}
+                              alt={icon.skillLogo.altText}
+                              key={key}
+                              className="h-[150px] w-[150px] hover:scale-105 transition-all duration-200"
+                            />
+                          </div>
+                        )
+                      })}
                   </div>
-                </div>
+                </Fade>
               </div>
-            </Tween>
-          )}
-        </Scene>
-      </Controller>
-    </TweenStyled>
+            </div>
+          </div>
+        )
+      })}
+    </>
   )
 }
 

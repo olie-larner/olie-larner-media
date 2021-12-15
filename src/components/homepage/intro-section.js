@@ -12,21 +12,21 @@ const IntroSection = loading => {
   }, [pageLoading])
   const i = 0
   return (
-    <div className="w-full flex h-screen">
-      <div className="w-11/12 mx-auto flex items-center">
+    <div className="flex w-full h-screen bg-center bg-cover bg-invertfaith">
+      <div className="flex items-center w-11/12 mx-auto">
         <div className="relative w-full">
-          <h1 className="text-9xl text-gray-800 font-playfair text-right">
+          <h1 className="absolute right-0 text-right text-gray-800 top-12 text-7xl font-playfair">
             Digital Creative
             <br /> Output
           </h1>
           <div
             className={classnames(
-              "absolute transition-all duration-700 right-0 top-0 align-middle bg-gray-800  overflow-hidden h-44 whitespace-nowrap",
+              "absolute transition-all duration-700 top-12 right-0 top-0 align-middle bg-gray-800  overflow-hidden h-28 whitespace-nowrap",
               { "w-0": pageLoading },
-              { "w-6/12": !pageLoading }
+              { "w-4/12": !pageLoading }
             )}
           >
-            <p className="text-9xl right-0 absolute text-white font-playfair text-right">
+            <p className="absolute right-0 text-right text-white text-7xl font-playfair">
               Digital Creative
               <br /> Output
             </p>

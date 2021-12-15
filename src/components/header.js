@@ -11,16 +11,16 @@ const Header = title => {
     if (isOpen) {
       setButtonColor("#FFFFFF")
     } else {
-      setButtonColor("#1f2937")
+      setButtonColor("#FFFFFF")
     }
   }, [isOpen])
 
   return (
-    <div className="h-20 flex items-center absolute w-full">
-      <h1 className=" font-arastin_std w-11/12 text-2xl mx-auto text-gray-800">
+    <div className="absolute flex items-center w-full h-20">
+      <h1 className="w-11/12 mx-auto text-2xl text-white  font-arastin_std">
         {title.title}
       </h1>
-      <div className="ml-auto mr-5 z-50">
+      <div className="z-50 ml-auto mr-5">
         <Hamburger
           toggled={isOpen}
           toggle={setOpen}

@@ -15,6 +15,7 @@ module.exports = {
       backgroundImage: {
         road: "url(../media/images/road_to_mist.jpg)",
         faith: "url('../media/images/faith.jpg')",
+        invertfaith: "url('../media/images/invert-faith.jpg')",
       },
     },
   },

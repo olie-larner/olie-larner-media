@@ -26,6 +26,16 @@ const APOLLO_QUERY = gql`
             sourceUrl(size: LARGE)
           }
         }
+        skillSet {
+          skillSetLogos {
+            skillLogo {
+              altText
+              sourceUrl(size: LARGE)
+            }
+            skillName
+          }
+          skillSetTitle
+        }
       }
       slug
     }
@@ -43,12 +53,12 @@ const IndexPage = () => {
     )
   }
   if (error) return `${error}`
-
+  const skillSet = data.pageBy.homePage.skillSet
   return (
     <Layout isHomePage>
       <IntroSection loading={loading} />
+      <SkillsSection skillSet={skillSet} />
       <BigImage image="bg-road" />
-      <SkillsSection />
       <Section flexDirection="row" />
       <Section flexDirection="row-reverse" />
     </Layout>
