@@ -4,7 +4,9 @@ import classNames from "classnames"
 
 const BigImage = image => {
   return (
-    <div className={`w-full h-screen bg-center bg-cover ${image.image}`}></div>
+    <div className={`w-full h-screen bg-center bg-cover ${image.image}`}>
+      Test Test
+    </div>
   )
 }
 
