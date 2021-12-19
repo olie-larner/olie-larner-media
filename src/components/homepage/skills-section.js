@@ -12,19 +12,24 @@ const SkillsSection = data => {
               <div id="trigger" />
 
               <div className="w-full">
-                <h3
-                  className={classNames(
-                    "text-7xl 2xl:text-9xl pb-10 cursor-pointer text-gray-800 font-playfair font-bold transition-transform duration-700 delay-200"
-                  )}
-                >
-                  {skill.skillSetTitle}
-                </h3>
-                <Fade bottom cascade>
+                <Fade bottom delay={300}>
+                  <h3
+                    className={classNames(
+                      "text-7xl 2xl:text-9xl pb-10 cursor-pointer text-gray-800 font-playfair font-bold transition-transform duration-700 delay-200"
+                    )}
+                  >
+                    {skill.skillSetTitle}
+                  </h3>
+                </Fade>
+                <Fade bottom delay={1000} cascade>
                   <div className="flex flex-row flex-wrap w-full">
                     {skill.skillSetLogos &&
                       skill.skillSetLogos.map((icon, key) => {
                         return (
-                          <div className="flex justify-center w-1/4 my-7">
+                          <div
+                            key={key}
+                            className="flex justify-center w-1/4 my-7"
+                          >
                             <img
                               src={icon.skillLogo.sourceUrl}
                               alt={icon.skillLogo.altText}

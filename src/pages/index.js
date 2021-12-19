@@ -7,6 +7,7 @@ import Section from "../components/Section/Section"
 import IntroSection from "../components/homepage/intro-section"
 import SkillsSection from "../components/homepage/skills-section"
 import BigImage from "../components/homepage/big-image"
+import Bio from "../components/homepage/bio"
 
 import Image1 from "../media/images/road_to_mist.jpg"
 import Image2 from "../media/images/faith.jpg"
@@ -26,6 +27,7 @@ const APOLLO_QUERY = gql`
             sourceUrl(size: LARGE)
           }
         }
+
         skillSet {
           skillSetLogos {
             skillLogo {
@@ -35,6 +37,17 @@ const APOLLO_QUERY = gql`
             skillName
           }
           skillSetTitle
+        }
+        bio {
+          about
+          images {
+            bioImages {
+              altText
+              sourceUrl(size: LARGE)
+            }
+          }
+          location
+          name
         }
       }
       slug
@@ -54,9 +67,11 @@ const IndexPage = () => {
   }
   if (error) return `${error}`
   const skillSet = data.pageBy.homePage.skillSet
+  const bioData = data.pageBy.homePage.bio
   return (
     <Layout isHomePage>
       <IntroSection loading={loading} />
+      <Bio bioData={bioData} />
       <SkillsSection skillSet={skillSet} />
       <BigImage image="bg-road" />
       <Section flexDirection="row" />
