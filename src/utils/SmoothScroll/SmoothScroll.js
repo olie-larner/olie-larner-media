@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react"
-
+import { useStaticQuery, graphql } from "gatsby"
 import "./SmoothScroll.css"
 import useWindowSize from "../../hooks/useWindowSize"
+import Header from "../../components/header"
 
 const SmoothScroll = ({ children }) => {
   // 1.
@@ -46,8 +47,24 @@ const SmoothScroll = ({ children }) => {
     requestAnimationFrame(() => smoothScrollingHandler())
   }
 
+  const {
+    wp: {
+      generalSettings: { title },
+    },
+  } = useStaticQuery(graphql`
+    query LayoutQuery {
+      wp {
+        generalSettings {
+          title
+          description
+        }
+      }
+    }
+  `)
+
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-hidden">
+      <Header title={title} />
       <div ref={scrollingContainerRef}>{children}</div>
     </div>
   )
