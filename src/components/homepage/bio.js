@@ -34,10 +34,9 @@ const Bio = data => {
         <div className="w-1/2">
           {bioData.images.map((pic, key) => {
             return (
-              <Fade>
+              <Fade delay={600} key={key}>
                 <div
                   className="rounded-full w-full pt-[100%] bg-cover overflow-hidden"
-                  key={key}
                   style={{
                     backgroundImage: `url(${pic.bioImages.sourceUrl})`,
                     backgroundRepeat: "no-repeat",
