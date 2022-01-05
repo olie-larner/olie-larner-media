@@ -10,14 +10,29 @@ const Header = title => {
   useEffect(() => {
     if (isOpen) {
       setButtonColor("#FFFFFF")
-    } else {
+    } else if (window.scrollY < 300) {
       setButtonColor("#FFFFFF")
+    } else {
+      setButtonColor("#1f2937")
     }
   }, [isOpen])
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        setButtonColor("#1f2937")
+      } else {
+        setButtonColor("#FFFFFF")
+      }
+    })
+  }, [])
+
   return (
     <div className="absolute flex items-center w-full h-20">
-      <h1 className="w-11/12 mx-auto text-2xl text-white  font-arastin_std">
+      <h1
+        className="w-11/12 mx-auto text-2xl z-10 font-arastin_std transition-all"
+        style={{ color: buttonColor }}
+      >
         {title.title}
       </h1>
       <div className="z-50 ml-auto mr-5">

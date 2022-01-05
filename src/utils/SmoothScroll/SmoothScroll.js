@@ -47,24 +47,9 @@ const SmoothScroll = ({ children }) => {
     requestAnimationFrame(() => smoothScrollingHandler())
   }
 
-  const {
-    wp: {
-      generalSettings: { title },
-    },
-  } = useStaticQuery(graphql`
-    query LayoutQuery {
-      wp {
-        generalSettings {
-          title
-          description
-        }
-      }
-    }
-  `)
-
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-hidden">
-      <Header title={title} />
+      <Header title={"Olie Larner"} />
       <div ref={scrollingContainerRef}>{children}</div>
     </div>
   )

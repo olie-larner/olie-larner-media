@@ -8,14 +8,14 @@ const SkillsSection = data => {
       {data.skillSet.map((skill, key) => {
         return (
           <div id="skills-section" className="w-full py-32 bg-white" key={key}>
-            <div className="w-11/12 mx-auto">
+            <div className="w-10/12 mx-auto">
               <div id="trigger" />
 
               <div className="w-full">
                 <Fade bottom delay={300}>
                   <h3
                     className={classNames(
-                      "text-7xl 2xl:text-9xl pb-10 cursor-pointer text-gray-800 font-playfair font-bold transition-transform duration-700 delay-200"
+                      "text-7xl pb-10 cursor-pointer text-gray-800 font-playfair font-bold transition-transform duration-700 delay-200"
                     )}
                   >
                     {skill.skillSetTitle}

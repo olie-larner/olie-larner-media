@@ -18,15 +18,6 @@ const APOLLO_QUERY = gql`
       id
       homePage {
         fieldGroupName
-        hero {
-          fieldGroupName
-          title
-          backgroundImage {
-            id
-            altText
-            sourceUrl(size: LARGE)
-          }
-        }
 
         skillSet {
           skillSetLogos {
@@ -74,8 +65,6 @@ const IndexPage = () => {
       <Bio bioData={bioData} />
       <SkillsSection skillSet={skillSet} />
       <BigImage image="bg-road" />
-      <Section flexDirection="row" />
-      <Section flexDirection="row-reverse" />
     </Layout>
   )
 }

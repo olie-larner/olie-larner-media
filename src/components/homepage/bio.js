@@ -1,37 +1,49 @@
 import React, { useState } from "react"
 import Reveal from "react-reveal/Reveal"
-import classNames from "classnames"
+import Fade from "react-reveal/Fade"
 
 const Bio = data => {
-  const [revealClass, setRevealClass] = useState("scale-x-0")
+  const [revealClass, setRevealClass] = useState("scale-y-0")
   const { bioData } = data
   console.log(bioData)
   return (
     <div className="w-full py-32">
-      <div className="w-11/12 mx-auto">
-        <Reveal
-          onReveal={() => {
-            setTimeout(() => {
-              setRevealClass("scale-x-100")
-            }, 800)
-          }}
-        >
-          <h2
-            className={`font-playfair text-7xl transition-all ${revealClass}`}
+      <div className="w-10/12 mx-auto flex">
+        <div className="w-1/2 flex flex-col justify-center">
+          <Reveal
+            onReveal={() => {
+              setTimeout(() => {
+                setRevealClass("scale-y-100")
+              }, 800)
+            }}
           >
-            About
-          </h2>
-        </Reveal>
-        <div dangerouslySetInnerHTML={{ __html: bioData.about }} />
-        <div>
+            <h2
+              className={`font-playfair pb-11 text-7xl transition-all ${revealClass}`}
+            >
+              Hello.
+            </h2>
+          </Reveal>
+          <Fade bottom>
+            <div
+              className=" w-3/5 font-playfair leading-10 italic text-sm"
+              dangerouslySetInnerHTML={{ __html: bioData.about }}
+            />
+          </Fade>
+        </div>
+
+        <div className="w-1/2">
           {bioData.images.map((pic, key) => {
             return (
-              <div>
-                <img
-                  src={pic.bioImages.sourceUrl}
-                  alt={pic.bioImages.altText}
-                />
-              </div>
+              <Fade>
+                <div
+                  className="rounded-full w-full pt-[100%] bg-cover overflow-hidden"
+                  key={key}
+                  style={{
+                    backgroundImage: `url(${pic.bioImages.sourceUrl})`,
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
+              </Fade>
             )
           })}
         </div>
