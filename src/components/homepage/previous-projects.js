@@ -49,25 +49,33 @@ const PreviousProjects = previousProjects => {
         return (
           <div
             key={key}
-            className="w-10/12 mx-auto overflow-hidden flex"
+            className={classNames(
+              "w-10/12 mx-auto overflow-hidden relative transition-all duration-1000 flex border-b-2",
+              {
+                " border-gray-800": !isProjVisible,
+              },
+              {
+                "border-white": isProjVisible,
+              }
+            )}
             onMouseEnter={() => showProj(key)}
             onMouseLeave={() => setProjName(undefined)}
           >
+            <div
+              className={classNames(
+                "absolute top-0 bg-center h-full w-full opacity-0 bg-no-repeat bg-gray-800 bg-cover transition-all duration-500",
+                {
+                  "scale-125 opacity-0": projName !== projNo,
+                },
+                {
+                  "scale-100 opacity-30": projName === projNo,
+                }
+              )}
+              style={{
+                backgroundImage: `url(${proj.backgroundImage.sourceUrl})`,
+              }}
+            />
             <div className="w-full relative py-16 px-7 border-t-[1] border-b-[1]">
-              <div
-                className={classNames(
-                  "absolute top-0 bg-center h-full w-full opacity-0 bg-no-repeat bg-gray-800 bg-cover transition-all duration-200",
-                  {
-                    "scale-125 opacity-0": projName !== projNo,
-                  },
-                  {
-                    "scale-100 opacity-30": projName === projNo,
-                  }
-                )}
-                style={{
-                  backgroundImage: `url(${proj.backgroundImage.sourceUrl})`,
-                }}
-              />
               <div className="flex relative font-playfair justify-between italic">
                 <div className="flex w-1/5 justify-around items-center">
                   <p
