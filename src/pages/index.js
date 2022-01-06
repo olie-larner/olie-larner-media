@@ -8,6 +8,7 @@ import IntroSection from "../components/homepage/intro-section"
 import SkillsSection from "../components/homepage/skills-section"
 import BigImage from "../components/homepage/big-image"
 import Bio from "../components/homepage/bio"
+import PreviousProjects from "../components/homepage/previous-projects"
 
 import Image1 from "../media/images/road_to_mist.jpg"
 import Image2 from "../media/images/faith.jpg"
@@ -29,6 +30,18 @@ const APOLLO_QUERY = gql`
           }
           skillSetTitle
         }
+
+        previousProjects {
+          backgroundImage {
+            altText
+            sourceUrl(size: LARGE)
+          }
+          websiteLink
+          websiteName
+          year
+          workDone
+        }
+
         bio {
           about
           images {
@@ -59,11 +72,13 @@ const IndexPage = () => {
   if (error) return `${error}`
   const skillSet = data.pageBy.homePage.skillSet
   const bioData = data.pageBy.homePage.bio
+  const previousProjects = data.pageBy.homePage.previousProjects
   return (
     <Layout isHomePage>
       <IntroSection loading={loading} />
       <Bio bioData={bioData} />
       <SkillsSection skillSet={skillSet} />
+      <PreviousProjects previousProjects={previousProjects} />
       <BigImage image="bg-road" />
     </Layout>
   )

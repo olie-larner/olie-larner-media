@@ -7,7 +7,6 @@ const SkillsSection = data => {
 
   const showTitle = logoNo => {
     setLogoName(logoNo)
-    console.log(logoNo)
   }
 
   return (
@@ -47,10 +46,10 @@ const SkillsSection = data => {
                               className={classNames(
                                 "h-[150px] w-[150px] transition-all duration-200",
                                 {
-                                  "scale-100 opacity-100": logoName != logoNo,
+                                  "scale-100 opacity-100": logoName !== logoNo,
                                 },
                                 {
-                                  "scale-105 opacity-30": logoName == logoNo,
+                                  "scale-105 opacity-30": logoName === logoNo,
                                 }
                               )}
                             />
@@ -58,10 +57,10 @@ const SkillsSection = data => {
                               className={classNames(
                                 "absolute font-playfair text-3xl font-bold transition-all duration-800",
                                 {
-                                  "opacity-0 top-0": logoName != logoNo,
+                                  "opacity-0 top-0": logoName !== logoNo,
                                 },
                                 {
-                                  "opacity-100 top-[50px]": logoName == logoNo,
+                                  "opacity-100 top-[50px]": logoName === logoNo,
                                 }
                               )}
                             >
