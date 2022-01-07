@@ -25,7 +25,7 @@ const Bio = data => {
           </Reveal>
           <Fade bottom>
             <div
-              className=" w-3/5 font-playfair leading-10 italic text-sm"
+              className=" w-3/5 font-playfair leading-10 italic text-xl"
               dangerouslySetInnerHTML={{ __html: bioData.about }}
             />
           </Fade>

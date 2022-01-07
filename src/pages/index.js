@@ -1,17 +1,12 @@
 import React, { useState } from "react"
 import gql from "graphql-tag"
 import { useQuery } from "@apollo/client"
-
 import Layout from "../components/layout"
-import Section from "../components/Section/Section"
 import IntroSection from "../components/homepage/intro-section"
 import SkillsSection from "../components/homepage/skills-section"
 import BigImage from "../components/homepage/big-image"
 import Bio from "../components/homepage/bio"
 import PreviousProjects from "../components/homepage/previous-projects"
-
-import Image1 from "../media/images/road_to_mist.jpg"
-import Image2 from "../media/images/faith.jpg"
 
 const APOLLO_QUERY = gql`
   {

@@ -1,10 +1,8 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
 import Footer from "./footer"
 import SmoothScroll from "../utils/SmoothScroll/SmoothScroll"
 
-const Layout = ({ isHomePage, children }) => {
+const Layout = ({ children }) => {
   return (
     <SmoothScroll>
       <main>{children}</main>

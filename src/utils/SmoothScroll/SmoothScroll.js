@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import "./SmoothScroll.css"
 import useWindowSize from "../../hooks/useWindowSize"
 import Header from "../../components/header"
