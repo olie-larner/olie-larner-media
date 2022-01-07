@@ -5,7 +5,6 @@ import Fade from "react-reveal/Fade"
 const Bio = data => {
   const [revealClass, setRevealClass] = useState("scale-y-0")
   const { bioData } = data
-  console.log(bioData)
   return (
     <div className="w-full py-32">
       <div className="w-10/12 mx-auto flex">

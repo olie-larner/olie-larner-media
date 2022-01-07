@@ -1,6 +1,4 @@
 import React from "react"
-import { useInViewport } from "ahooks"
-import classNames from "classnames"
 
 const BigImage = image => {
   return (

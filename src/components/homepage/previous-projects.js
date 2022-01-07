@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useInView } from "react-hook-inview"
 import classNames from "classnames"
+import Fade from "react-reveal/Fade"
 
 const PreviousProjects = previousProjects => {
   const [projName, setProjName] = useState(undefined)
@@ -30,19 +31,21 @@ const PreviousProjects = previousProjects => {
       )}
     >
       <div className="w-10/12 mx-auto flex">
-        <h3
-          className={classNames(
-            "text-7xl pb-16 font-playfair transition-transform duration-700 delay-200",
-            {
-              "text-gray-800": !isProjVisible,
-            },
-            {
-              "text-white": isProjVisible,
-            }
-          )}
-        >
-          Previous Projects
-        </h3>
+        <Fade bottom delay={300}>
+          <h3
+            className={classNames(
+              "text-7xl pb-16 font-playfair transition-transform duration-700 delay-200",
+              {
+                "text-gray-800": !isProjVisible,
+              },
+              {
+                "text-white": isProjVisible,
+              }
+            )}
+          >
+            Previous Projects
+          </h3>
+        </Fade>
       </div>
       {previousProjects.previousProjects.map((proj, key) => {
         const projNo = key

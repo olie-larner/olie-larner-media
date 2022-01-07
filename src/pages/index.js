@@ -7,6 +7,7 @@ import SkillsSection from "../components/homepage/skills-section"
 import BigImage from "../components/homepage/big-image"
 import Bio from "../components/homepage/bio"
 import PreviousProjects from "../components/homepage/previous-projects"
+import Music from "../components/homepage/music-section"
 
 const APOLLO_QUERY = gql`
   {
@@ -35,6 +36,10 @@ const APOLLO_QUERY = gql`
           websiteName
           year
           workDone
+        }
+
+        music {
+          youtubeMix
         }
 
         bio {
@@ -68,12 +73,14 @@ const IndexPage = () => {
   const skillSet = data.pageBy.homePage.skillSet
   const bioData = data.pageBy.homePage.bio
   const previousProjects = data.pageBy.homePage.previousProjects
+  const music = data.pageBy.homePage.music
   return (
     <Layout isHomePage>
       <IntroSection loading={loading} />
       <Bio bioData={bioData} />
       <SkillsSection skillSet={skillSet} />
       <PreviousProjects previousProjects={previousProjects} />
+      <Music music={music} />
       <BigImage image="bg-road" />
     </Layout>
   )

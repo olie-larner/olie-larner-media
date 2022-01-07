@@ -14,7 +14,7 @@ const IntroSection = loading => {
   return (
     <div className="flex w-full h-screen bg-center bg-cover bg-invertfaith">
       <div className="flex items-center w-11/12 mx-auto">
-        <div className="relative w-full">
+        <div className="relative w-[505px] ml-auto">
           <h1 className="absolute right-0 text-right text-gray-800 top-12 text-7xl font-playfair">
             Digital Creative
             <br /> Output
@@ -23,7 +23,7 @@ const IntroSection = loading => {
             className={classnames(
               "absolute transition-all duration-700 top-12 right-0 top-0 align-middle bg-gray-800  overflow-hidden h-28 whitespace-nowrap",
               { "w-0": pageLoading },
-              { "w-4/12": !pageLoading }
+              { "w-[280px]": !pageLoading }
             )}
           >
             <p className="absolute right-0 text-right text-white text-7xl font-playfair">
