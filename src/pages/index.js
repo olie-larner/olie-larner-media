@@ -11,15 +11,6 @@ const APOLLO_QUERY = gql`
       id
       homePage {
         fieldGroupName
-        hero {
-          fieldGroupName
-          title
-          backgroundImage {
-            id
-            altText
-            sourceUrl(size: LARGE)
-          }
-        }
       }
       slug
     }
@@ -36,8 +27,6 @@ const IndexPage = () => {
     )
   }
   if (error) return `${error}`
-
-  const { backgroundImage, title } = data.pageBy.homePage.hero
 
   return (
     <Layout isHomePage>
