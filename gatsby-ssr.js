@@ -17,7 +17,7 @@ export function onRenderBody({
       key="1"
       rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossOrigin
+      crossOrigin="true"
     />,
     <link
       key="2"

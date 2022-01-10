@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
-
 import "./SmoothScroll.css"
 import useWindowSize from "../../hooks/useWindowSize"
+import Header from "../../components/header"
 
 const SmoothScroll = ({ children }) => {
   // 1.
@@ -47,7 +47,8 @@ const SmoothScroll = ({ children }) => {
   }
 
   return (
-    <div className="w-full h-full fixed top-0 left-0 overflow-hidden pointer-events-none">
+    <div className="fixed top-0 left-0 w-full h-full overflow-hidden">
+      <Header title={"Olie Larner"} />
       <div ref={scrollingContainerRef}>{children}</div>
     </div>
   )

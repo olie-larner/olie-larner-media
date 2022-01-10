@@ -12,6 +12,11 @@ module.exports = {
         star_avenue: ["star_avenueregular", "sans-serif"],
         playfair: ["Playfair Display", "serif"],
       },
+      backgroundImage: {
+        road: "url(../media/images/road_to_mist.jpg)",
+        faith: "url('../media/images/faith.jpg')",
+        invertfaith: "url('../media/images/invert-faith.jpg')",
+      },
     },
   },
   variants: {
