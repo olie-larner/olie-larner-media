@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import gql from "graphql-tag"
 import { useQuery } from "@apollo/client"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 import IntroSection from "../components/homepage/intro-section"
 import SkillsSection from "../components/homepage/skills-section"
 import BigImage from "../components/homepage/big-image"
@@ -77,6 +78,7 @@ const IndexPage = () => {
   const music = data.pageBy.homePage.music
   return (
     <Layout isHomePage>
+      <Seo title="Digital Creative Output" />
       <IntroSection loading={loading} />
       <Bio bioData={bioData} />
       <SkillsSection skillSet={skillSet} />

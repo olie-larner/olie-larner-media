@@ -50,9 +50,8 @@ const PreviousProjects = previousProjects => {
       {previousProjects.previousProjects.map((proj, key) => {
         const projNo = key
         return (
-          <a href={proj.websiteLink} target="_blank">
+          <a key={key} href={proj.websiteLink} target="_blank">
             <div
-              key={key}
               className={classNames(
                 "w-10/12 mx-auto overflow-hidden relative transition-all duration-1000 cursor-pointer flex border-b-2",
                 {

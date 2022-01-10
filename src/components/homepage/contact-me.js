@@ -3,7 +3,7 @@ import Fade from "react-reveal/Fade"
 
 const ContactMe = () => {
   return (
-    <div className="w-full pb-32 md:py-32">
+    <div className="w-full pb-32">
       <div className="w-10/12 mx-auto flex flex-col items-center">
         <Fade bottom delay={500}>
           <h3 className="text-7xl font-playfair text-center transition-transform duration-700 delay-200">
