@@ -16,13 +16,10 @@ const ContactMe = () => {
           </p>
           <a
             className=" italic text-2xl md:text-4xl font-playfair"
-            href="mailto:info@olielarner.awsapps.com"
+            href="mailto:info@olielarner.com"
           >
-            info@olielarner.awsapps.com<sup>*</sup>
+            info@olielarner.com
           </a>
-          <p className="text-xs text-right self-end w-1/3 md:w-full font-playfair pt-8">
-            *Don't blame me for the odd looking email address, Amazon are weird.
-          </p>
         </Fade>
       </div>
     </div>
