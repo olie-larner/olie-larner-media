@@ -36,12 +36,12 @@ const Header = title => {
         {title.title}
       </h1>
       <div className="z-50 ml-auto mr-5">
-        <Hamburger
+        {/* <Hamburger
           toggled={isOpen}
           toggle={setOpen}
           duration={1}
           color={buttonColor}
-        />
+        /> */}
       </div>
       <Menu isOpen={isOpen} />
     </div>

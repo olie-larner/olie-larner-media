@@ -14,7 +14,7 @@ const IntroSection = loading => {
   return (
     <div className="flex w-full h-screen bg-center bg-cover bg-invertfaith">
       <div className="flex items-center w-11/12 mx-auto">
-        <div className="relative w-[505px] ml-auto">
+        <div className="relative mt-[250px] lg:mt-0 w-[505px] ml-auto">
           <h1 className="absolute right-0 text-right text-gray-800 top-12 text-7xl font-playfair">
             Digital Creative
             <br /> Output

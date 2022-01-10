@@ -8,6 +8,7 @@ import BigImage from "../components/homepage/big-image"
 import Bio from "../components/homepage/bio"
 import PreviousProjects from "../components/homepage/previous-projects"
 import Music from "../components/homepage/music-section"
+import ContactMe from "../components/homepage/contact-me"
 
 const APOLLO_QUERY = gql`
   {
@@ -81,6 +82,7 @@ const IndexPage = () => {
       <SkillsSection skillSet={skillSet} />
       <PreviousProjects previousProjects={previousProjects} />
       <Music music={music} />
+      <ContactMe />
       <BigImage image="bg-road" />
     </Layout>
   )

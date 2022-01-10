@@ -6,6 +6,9 @@
  *
  */
 
+const website = require("./config/website")
+const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix
+
 module.exports = {
   /**
    * Adding plugins to this array adds them to your Gatsby site.
@@ -13,6 +16,16 @@ module.exports = {
    * Gatsby has a rich ecosystem of plugins.
    * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
    */
+  pathPrefix: website.pathPrefix,
+  siteMetadata: {
+    siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
+    pathPrefix,
+    title: website.title,
+    titleAlt: website.titleAlt,
+    description: website.description,
+    headline: website.headline,
+    siteLanguage: website.siteLanguage,
+  },
   plugins: [
     {
       /**

@@ -81,7 +81,7 @@ const PreviousProjects = previousProjects => {
               />
               <div className="w-full relative py-16 px-7 border-t-[1] border-b-[1]">
                 <div className="flex relative font-playfair justify-between italic">
-                  <div className="flex w-1/5 justify-around items-center">
+                  <div className="flex w-1/2 lg:w-1/5 justify-around items-center">
                     <p
                       className={classNames(
                         "font-playfair italic text-3xl",

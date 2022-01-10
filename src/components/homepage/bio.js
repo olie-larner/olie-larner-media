@@ -7,8 +7,8 @@ const Bio = data => {
   const { bioData } = data
   return (
     <div className="w-full py-32">
-      <div className="w-10/12 mx-auto flex">
-        <div className="w-1/2 flex flex-col justify-center">
+      <div className="w-10/12 mx-auto flex flex-col lg:flex-row">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center">
           <Reveal
             onReveal={() => {
               setTimeout(() => {
@@ -24,13 +24,13 @@ const Bio = data => {
           </Reveal>
           <Fade bottom>
             <div
-              className=" w-3/5 font-playfair leading-10 italic text-xl"
+              className=" w-full lg:w-3/5 font-playfair leading-10 italic text-xl"
               dangerouslySetInnerHTML={{ __html: bioData.about }}
             />
           </Fade>
         </div>
 
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           {bioData.images.map((pic, key) => {
             return (
               <Fade delay={600} key={key}>
