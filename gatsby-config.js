@@ -73,9 +73,9 @@ module.exports = {
         short_name: `GatsbyJS & WP`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/favicon-16x16.png`,
       },
     },
     {
