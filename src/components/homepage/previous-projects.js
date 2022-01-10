@@ -79,12 +79,12 @@ const PreviousProjects = previousProjects => {
                   backgroundImage: `url(${proj.backgroundImage.sourceUrl})`,
                 }}
               />
-              <div className="w-full relative py-16 px-7 border-t-[1] border-b-[1]">
+              <div className="w-full relative py-16 px-0 md:px-7 border-t-[1] border-b-[1]">
                 <div className="flex relative font-playfair justify-between italic">
-                  <div className="flex w-1/2 lg:w-1/5 justify-around items-center">
+                  <div className="flex w-1/2 lg:w-1/5 justify-between items-center">
                     <p
                       className={classNames(
-                        "font-playfair italic text-3xl",
+                        "font-playfair italic text-2xl md:text-3xl",
                         {
                           "text-gray-800": !isProjVisible,
                         },
@@ -112,7 +112,7 @@ const PreviousProjects = previousProjects => {
 
                   <div
                     className={classNames(
-                      "flex",
+                      "flex text-right md:text-left text-sm md:text-base",
                       {
                         "text-gray-800": !isProjVisible,
                       },

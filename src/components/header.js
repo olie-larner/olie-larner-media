@@ -30,7 +30,7 @@ const Header = title => {
   return (
     <div className="absolute flex items-center w-full h-20">
       <h1
-        className="w-11/12 mx-auto text-2xl z-10 font-arastin_std transition-all"
+        className="w-10/12 sm:w-11/12 mx-auto text-2xl z-10 font-arastin_std transition-all"
         style={{ color: buttonColor }}
       >
         {title.title}

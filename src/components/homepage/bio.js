@@ -6,7 +6,7 @@ const Bio = data => {
   const [revealClass, setRevealClass] = useState("scale-y-0")
   const { bioData } = data
   return (
-    <div className="w-full py-32">
+    <div className="w-full pt-32 pb-16 md:py-32">
       <div className="w-10/12 mx-auto flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
           <Reveal

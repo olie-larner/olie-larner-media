@@ -35,7 +35,7 @@ const SkillsSection = data => {
                         return (
                           <div
                             key={key}
-                            className="flex relative justify-center w-1/4 my-7"
+                            className="flex relative justify-center w-1/3 md:w-1/4 my-7"
                             onMouseEnter={() => showTitle(logoNo)}
                             onMouseLeave={() => setLogoName(undefined)}
                           >
@@ -44,7 +44,7 @@ const SkillsSection = data => {
                               alt={icon.skillLogo.altText}
                               key={key}
                               className={classNames(
-                                "h-[150px] w-[150px] transition-all duration-200",
+                                "h-[90px] w-[90px] md:h-[150px] md:w-[150px] transition-all duration-200",
                                 {
                                   "scale-100 opacity-100": logoName !== logoNo,
                                 },
