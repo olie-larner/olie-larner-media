@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import gql from "graphql-tag"
+import classNames from "classnames"
 import { useQuery } from "@apollo/client"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -63,21 +64,45 @@ const APOLLO_QUERY = gql`
 
 const IndexPage = () => {
   const { loading, error, data } = useQuery(APOLLO_QUERY)
+  const [pageLoading, setLoading] = useState(loading)
+  useEffect(() => {
+    if (!loading) {
+      setTimeout(() => {
+        setLoading(false)
+      }, 2000)
+    }
+  })
 
   if (loading) {
     return (
       <div className="fixed top-0 z-10 flex items-center justify-center w-screen h-screen bg-white">
-        <h1>Loading...</h1>
+        <h1 className="text-2xl text-center font-arastin_std ">
+          OLIE LARNER <br />
+          Loading...
+        </h1>
       </div>
     )
   }
   if (error) return `${error}`
+
   const skillSet = data.pageBy.homePage.skillSet
   const bioData = data.pageBy.homePage.bio
   const previousProjects = data.pageBy.homePage.previousProjects
   const music = data.pageBy.homePage.music
   return (
     <Layout isHomePage>
+      <div
+        className={classNames(
+          "fixed top-0 z-40 flex items-center justify-center w-screen h-screen bg-white transition-all delay-1000 duration-500",
+          { "opacity-100": pageLoading },
+          { "opacity-0": !pageLoading }
+        )}
+      >
+        <h1 className="text-2xl text-center font-arastin_std">
+          OLIE LARNER <br />
+          Loading...
+        </h1>
+      </div>
       <Seo title="Digital Creative Output" />
       <IntroSection loading={loading} />
       <Bio bioData={bioData} />

@@ -6,7 +6,7 @@ const ContactMe = () => {
     <div className="w-full pb-32">
       <div className="w-10/12 mx-auto flex flex-col items-center">
         <Fade bottom delay={500}>
-          <h3 className="text-7xl font-playfair text-center transition-transform duration-700 delay-200">
+          <h3 className="text-7xl font-playfair text-center">
             That's about it...
           </h3>
 
