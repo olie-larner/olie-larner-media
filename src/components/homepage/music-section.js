@@ -19,7 +19,6 @@ const MusicSection = music => {
         <Fade delay={500}>
           <ReactPlayer
             url={music.music.youtubeMix}
-            light={true}
             width="100%"
             height="100vh"
           />
