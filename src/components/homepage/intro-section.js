@@ -7,7 +7,7 @@ const IntroSection = loading => {
     if (!loading.loading) {
       setTimeout(() => {
         setLoading(false)
-      }, 500)
+      }, 4000)
     }
   }, [pageLoading])
   const i = 0
