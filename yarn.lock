@@ -5794,10 +5794,10 @@
     "@babel/runtime" "^7.15.4"
     "postcss-loader" "^4.3.0"
 
-"gatsby-plugin-react-helmet@^5.1.0":
-  "integrity" "sha512-3NcVxbziBxCBGjbqCpQMndytLaeJeymgZsj+pdypH9Dq9g2dnm7/rFyk2PaZ7vngM4NWli7r9Q0XcKEFOohmPg=="
-  "resolved" "https://registry.npmjs.org/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-5.1.0.tgz"
-  "version" "5.1.0"
+"gatsby-plugin-react-helmet@^5.4.0":
+  "integrity" "sha512-bDJYOBk0HNaK8pKHTqr8U6CFNTRCgFvgqyrGNxHeva4sS2GKV/Rj5axRYx8ti8HXgyHMgNbaMO8SgZIKf8W5DQ=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-5.4.0.tgz"
+  "version" "5.4.0"
   dependencies:
     "@babel/runtime" "^7.15.4"
 
