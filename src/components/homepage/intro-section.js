@@ -21,7 +21,7 @@ const IntroSection = loading => {
           </h1>
           <div
             className={classnames(
-              "absolute transition-all duration-700 top-12 right-0 top-0 align-middle bg-gray-800  overflow-hidden h-20 md:h-28 whitespace-nowrap",
+              "absolute transition-all duration-700 top-12 right-0 align-middle bg-gray-800  overflow-hidden h-20 md:h-28 whitespace-nowrap",
               { "w-0": pageLoading },
               { "w-[187px] md:w-[280px]": !pageLoading }
             )}
