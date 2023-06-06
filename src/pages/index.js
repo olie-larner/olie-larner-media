@@ -107,7 +107,6 @@ const IndexPage = () => {
       <IntroSection loading={loading} />
       <Bio bioData={bioData} />
       <SkillsSection skillSet={skillSet} />
-      <PreviousProjects previousProjects={previousProjects} />
       <Music music={music} />
       <ContactMe />
       <BigImage image="bg-road" />
