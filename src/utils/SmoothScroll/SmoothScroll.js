@@ -6,6 +6,7 @@ import Header from "../../components/header"
 const SmoothScroll = ({ children }) => {
   // 1.
   const windowSize = useWindowSize()
+  console.log(windowSize.width)
 
   //2.
   const scrollingContainerRef = useRef()

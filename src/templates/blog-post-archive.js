@@ -1,69 +1,118 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
-
+import gql from "graphql-tag"
+import { useQuery } from "@apollo/client"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({
-  data,
-  pageContext: { nextPagePath, previousPagePath },
-}) => {
-  const posts = data.allWpPost.nodes
+const BLOG_QUERY = gql`
+  {
+    posts {
+      edges {
+        node {
+          id
+          excerpt(format: RENDERED)
+          categories {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+          date
+          featuredImage {
+            node {
+              altText
+              sourceUrl(size: LARGE)
+            }
+          }
+          title(format: RENDERED)
+          slug
+          uri
+        }
+      }
+    }
+  }
+`
 
-  if (!posts.length) {
+const BlogIndex = () => {
+  const { loading, error, data } = useQuery(BLOG_QUERY)
+  if (loading) {
     return (
-      <Layout>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add posts to your WordPress site and they'll
-          appear here!
-        </p>
-      </Layout>
+      <div className="fixed top-0 z-10 flex items-center justify-center w-screen h-screen bg-white">
+        <h1 className="text-2xl text-center font-arastin_std ">
+          OLIE LARNER <br />
+          Loading...
+        </h1>
+      </div>
     )
   }
+  if (error) return `${error}`
+
+  const posts = data.posts.edges
+
+  console.log(posts)
+
+  // if (!posts.length) {
+  //   return (
+  //     <Layout>
+  //       <Seo title="All posts" />
+  //       <Bio />
+  //       <p>
+  //         No blog posts found. Add posts to your WordPress site and they'll
+  //         appear here!
+  //       </p>
+  //     </Layout>
+  //   )
+  // }
 
   return (
     <Layout>
       <Seo title="All posts" />
 
       <Bio />
+      <div>
+        <ol style={{ listStyle: `none` }}>
+          {posts.map(post => {
+            const title = post.node.title
 
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.title
-
-          return (
-            <li key={post.uri}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.uri} itemProp="url">
-                      <span itemProp="headline">{parse(title)}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.date}</small>
-                </header>
-                <section itemProp="description">{parse(post.excerpt)}</section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
-
-      {previousPagePath && (
+            return (
+              <li key={post.node.uri}>
+                <article
+                  className="post-list-item"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                  <header>
+                    <h2>
+                      {title && (
+                        <Link to={post.node.uri} itemProp="url">
+                          <span itemProp="headline">{parse(title)}</span>
+                        </Link>
+                      )}
+                    </h2>
+                    <small>{post.node.date}</small>
+                  </header>
+                  {post.node.excerpt && (
+                    <section itemProp="description">
+                      {parse(post.node.excerpt)}
+                    </section>
+                  )}
+                </article>
+              </li>
+            )
+          })}
+        </ol>
+      </div>
+      {/* {previousPagePath && (
         <>
           <Link to={previousPagePath}>Previous page</Link>
           <br />
         </>
       )}
-      {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
+      {nextPagePath && <Link to={nextPagePath}>Next page</Link>} */}
     </Layout>
   )
 }
